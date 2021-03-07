@@ -1,1 +1,15 @@
-﻿
+﻿  Entity.cpp
+  Manager.cpp
+  Game.cpp
+  somplejson_demo.cpp
+  JSON.cpp
+  JSONValue.cpp
+  main.cpp
+  sdlutils_demo.cpp
+  SDLUtils.cpp
+  SoundEffect.cpp
+  Texture.cpp
+  Collisions.cpp
+  Vector2D.cpp
+  Generando código...
+  TPV2.vcxproj -> C:\Users\manue\Desktop\Uni\2ºAño\2ºCuatri\TPV2\Practica1\Practica1TPV2\TPV2\bin\TPV2Debug.exe
