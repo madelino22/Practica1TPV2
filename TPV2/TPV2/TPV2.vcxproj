@@ -38,6 +38,7 @@
     <ClInclude Include="components\Image.h" />
     <ClInclude Include="components\KeyBoardCtrl.h" />
     <ClInclude Include="components\Rectangle.h" />
+    <ClInclude Include="components\Rotate.h" />
     <ClInclude Include="components\Transform.h" />
     <ClInclude Include="ecs\Component.h" />
     <ClInclude Include="ecs\ecs.h" />
@@ -45,12 +46,12 @@
     <ClInclude Include="ecs\Entity.h" />
     <ClInclude Include="ecs\Manager.h" />
     <ClInclude Include="ecs\mpl.h" />
+    <ClInclude Include="FighterCtrl.h" />
     <ClInclude Include="game\ecs_defs.h" />
     <ClInclude Include="game\Game.h" />
     <ClInclude Include="json\simplejson_demo.h" />
     <ClInclude Include="json\JSON.h" />
     <ClInclude Include="json\JSONValue.h" />
-    <ClInclude Include="Rotate.h" />
     <ClInclude Include="sdlutils\sdlutils_demo.h" />
     <ClInclude Include="sdlutils\Font.h" />
     <ClInclude Include="sdlutils\InputHandler.h" />

@@ -8,6 +8,7 @@
 #include "../components/Rectangle.h"
 #include "../components/Transform.h"
 #include "../components/Rotate.h"
+#include "../components/FighterCtrl.h"
 #include "../ecs/ecs.h"
 #include "../ecs/Entity.h"
 #include "../sdlutils/InputHandler.h"
@@ -26,15 +27,15 @@ Game::~Game() {
 void Game::init() {
 
 	SDLUtils::init("Ping Pong", 800, 600,
-			"resources/config/pingpong.resources.json");
+			"resources/config/resources.json");
 
-	auto *ball = mngr_->addEntity();
-	ball->addComponent<Transform>(
+	auto *jet = mngr_->addEntity();
+	jet->addComponent<Transform>(
 			Vector2D(sdlutils().width() / 2.0f, sdlutils().height() / 2.0f),
-			Vector2D(), 10.0f, 10.0f, 0.0f);
-	ball->addComponent<Image>(&sdlutils().images().at("tennis_ball"));
-	ball->addComponent<Rotate>();
-	ball->addComponent<Bounce>();
+			Vector2D(), 50.0f, 50.0f, 0.0f);
+	jet->addComponent<Image>(&sdlutils().images().at("nave"));
+	jet->addComponent<FighterCtrl>();
+	jet->addComponent<Bounce>();
 
 
 }

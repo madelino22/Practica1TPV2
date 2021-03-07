@@ -28,7 +28,7 @@ public:
 		if (ih().keyDownEvent()) {
 			
 		    if (ih().isKeyDown(SDL_SCANCODE_LEFT)) {
-				tr_->setRot(tr_->getRot() + 5.0f);
+				tr_->setRot(tr_->getRot() - 5.0f);
 			}
 			else if (ih().isKeyDown(SDL_SCANCODE_RIGHT)) {
 				tr_->setRot(tr_->getRot() + 5.0f);
@@ -39,5 +39,4 @@ public:
 
 private:
 	Transform* tr_;
-}
-;
+};

@@ -179,7 +179,10 @@
     <ClInclude Include="components\Image.h">
       <Filter>Header Files\components</Filter>
     </ClInclude>
-    <ClInclude Include="Rotate.h">
+    <ClInclude Include="components\Rotate.h">
+      <Filter>Header Files\components</Filter>
+    </ClInclude>
+    <ClInclude Include="FighterCtrl.h">
       <Filter>Header Files\components</Filter>
     </ClInclude>
   </ItemGroup>
