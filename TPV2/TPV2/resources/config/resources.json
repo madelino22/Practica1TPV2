@@ -16,6 +16,14 @@
     {
       "id": "nave",
       "file": "resources/images/fighter.png"
+    },
+    {
+      "id": "asteroide",
+      "file": "resources/images/asteroid.png"
+    },
+    {
+      "id": "asteroideOro",
+      "file": "resources/images/asteroid_gold.png"
     }
 
   ],

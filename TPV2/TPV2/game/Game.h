@@ -16,6 +16,9 @@ public:
 	void init();
 	void start();
 private:
+
+	//este método hay que quitarle
+	void generaAsteroide();
 	std::unique_ptr<Manager> mngr_;
 };
 

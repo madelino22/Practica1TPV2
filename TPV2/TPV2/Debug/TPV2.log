@@ -1,3 +1,17 @@
 ﻿  Game.cpp
-C:\Users\roy_x\OneDrive\Escritorio\GitHub\Practica1TPV2\TPV2\TPV2\components\FighterCtrl.h(56,15): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
-  TPV2.vcxproj -> C:\Users\roy_x\OneDrive\Escritorio\GitHub\Practica1TPV2\TPV2\bin\TPV2Debug.exe
+C:\Users\manue\Documents\GitHub\Practica1TPV2\TPV2\TPV2\components\FighterCtrl.h(56,15): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\manue\Documents\GitHub\Practica1TPV2\TPV2\TPV2\components\Follow.h(16,1): error C2027: uso del tipo 'Manager' sin definir
+C:\Users\manue\Documents\GitHub\Practica1TPV2\TPV2\TPV2\ecs\Entity.h(13): message : vea la declaración de 'Manager'
+C:\Users\manue\Documents\GitHub\Practica1TPV2\TPV2\TPV2\components\Follow.h(16,40): error C2065: 'JET': identificador no declarado
+C:\Users\manue\Documents\GitHub\Practica1TPV2\TPV2\TPV2\components\Follow.h(16,1): error C2059: error de sintaxis: ')'
+C:\Users\manue\Documents\GitHub\Practica1TPV2\TPV2\TPV2\game\Game.cpp(43,49): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\manue\Documents\GitHub\Practica1TPV2\TPV2\TPV2\game\Game.cpp(46,66): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\manue\Documents\GitHub\Practica1TPV2\TPV2\TPV2\game\Game.cpp(46,37): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\manue\Documents\GitHub\Practica1TPV2\TPV2\TPV2\game\Game.cpp(49,46): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\manue\Documents\GitHub\Practica1TPV2\TPV2\TPV2\game\Game.cpp(52,88): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\manue\Documents\GitHub\Practica1TPV2\TPV2\TPV2\game\Game.cpp(52,46): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\manue\Documents\GitHub\Practica1TPV2\TPV2\TPV2\game\Game.cpp(59,82): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\manue\Documents\GitHub\Practica1TPV2\TPV2\TPV2\game\Game.cpp(59,47): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\manue\Documents\GitHub\Practica1TPV2\TPV2\TPV2\game\Game.cpp(61,75): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\manue\Documents\GitHub\Practica1TPV2\TPV2\TPV2\game\Game.cpp(61,45): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\manue\Documents\GitHub\Practica1TPV2\TPV2\TPV2\game\Game.cpp(65,90): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos

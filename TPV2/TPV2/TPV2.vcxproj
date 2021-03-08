@@ -36,6 +36,8 @@
   <ItemGroup>
     <ClInclude Include="components\Bounce.h" />
     <ClInclude Include="components\DeAcceleration.h" />
+    <ClInclude Include="components\FighterCtrl.h" />
+    <ClInclude Include="components\Follow.h" />
     <ClInclude Include="components\Image.h" />
     <ClInclude Include="components\KeyBoardCtrl.h" />
     <ClInclude Include="components\Rectangle.h" />
@@ -48,7 +50,6 @@
     <ClInclude Include="ecs\Entity.h" />
     <ClInclude Include="ecs\Manager.h" />
     <ClInclude Include="ecs\mpl.h" />
-    <ClInclude Include="FighterCtrl.h" />
     <ClInclude Include="game\ecs_defs.h" />
     <ClInclude Include="game\Game.h" />
     <ClInclude Include="json\simplejson_demo.h" />

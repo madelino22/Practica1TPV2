@@ -1,5 +1,6 @@
 // This file is part of the course TPV2@UCM - Samir Genaim
 
+
 #include "Game.h"
 
 #include "../components/Bounce.h"
@@ -11,6 +12,7 @@
 #include "../components/FighterCtrl.h"
 #include "../components/DeAcceleration.h"
 #include "../components/ShowAtOppositeSide.h"
+#include "../components/Follow.h"
 #include "../ecs/ecs.h"
 #include "../ecs/Entity.h"
 #include "../sdlutils/InputHandler.h"
@@ -19,6 +21,10 @@
 #include "../ecs/Manager.h"
 #include "../utils/Vector2D.h"
 
+
+using Point2D = Vector2D;
+struct JET;
+
 Game::Game() {
 	mngr_.reset(new Manager());
 }
@@ -26,6 +32,58 @@ Game::Game() {
 Game::~Game() {
 }
 
+
+void Game::generaAsteroide() {
+	auto* asteroide = mngr_->addEntity();
+
+	int posIniR = sdlutils().rand().nextInt(0, 4);		
+
+	Vector2D posIni;
+	if (posIniR == 0) {
+		posIni = Vector2D(0, sdlutils().rand().nextInt(0, sdlutils().height()));
+	}
+	else if (posIniR == 1) {
+		posIni = Vector2D(sdlutils().width(), sdlutils().rand().nextInt(0, sdlutils().height()));
+	}
+	else if (posIniR == 2) {
+		posIni = Vector2D(sdlutils().rand().nextInt(0, sdlutils().width()), 0);
+	}
+	else {
+		posIni = Vector2D(sdlutils().rand().nextInt(0, sdlutils().width()), sdlutils().height());
+
+	}
+
+
+	//cálculo de velIni
+	//point2d es un vector2d pero con el nombrecambiado para que sea más claro
+	Point2D r = Point2D(sdlutils().rand().nextInt(0, 100), sdlutils().rand().nextInt(0, 100));
+	//-50 para que quede centrado
+	Point2D c = Point2D(sdlutils().width() / 2 - 50, sdlutils().height() / 2 - 50);
+
+	c = c + r;
+
+	Vector2D velIni = Vector2D((c - posIni).normalize() * (sdlutils().rand().nextInt(1, 10) / 10.0)
+	);
+
+
+
+
+	asteroide->addComponent<Transform>(
+		posIni,
+		velIni, 50.0f, 50.0f, 0.0f);
+
+	int gold = sdlutils().rand().nextInt(1, 10);
+	if (gold >= 7) {
+		asteroide->addComponent<Image>(&sdlutils().images().at("asteroideOro"));
+		asteroide->addComponent<Follow>();
+	}
+	else {
+		asteroide->addComponent<Image>(&sdlutils().images().at("asteroide"));
+
+	}
+	asteroide->addComponent<ShowAtOppositeSide>();
+
+}
 void Game::init() {
 
 	SDLUtils::init("Ping Pong", 800, 600,
@@ -40,6 +98,13 @@ void Game::init() {
 	jet->addComponent<DeAcceleration>();
 	jet->addComponent<ShowAtOppositeSide>();
 
+	mngr_->setHandler<JET>(jet);
+
+	//asteoride
+	for (int x = 0; x < 10; x++) {
+		generaAsteroide();
+	}
+	
 
 }
 

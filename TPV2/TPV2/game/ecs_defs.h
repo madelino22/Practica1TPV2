@@ -12,6 +12,7 @@ class Rotate;
 class FighterCtrl;
 class DeAcceleration;
 class ShowAtOppositeSide;
+class Follow;
 #define _CMPS_LIST_  \
 	Transform,\
 	Rectangle,\
@@ -21,7 +22,8 @@ class ShowAtOppositeSide;
 	FighterCtrl,\
 	Rotate, \
 	DeAcceleration, \
-	ShowAtOppositeSide
+	ShowAtOppositeSide,\
+	Follow
 
 
 
