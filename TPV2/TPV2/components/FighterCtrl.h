@@ -34,6 +34,8 @@ public:
 				r = tr_->getRot();
 				auto& vel = tr_->getVel();
 				newVel = vel + Vector2D(0, -1).rotate(r) * thrust;
+				if (newVel.magnitude() > speedLimit)
+					newVel = newVel.normalize()*speedLimit;
 				(vel).setX(newVel.getX());
 				(vel).setY(newVel.getY());
 
@@ -52,6 +54,7 @@ public:
 
 private:
 	float thrust = 0.2;
-	float speedLimit, r;
+	float speedLimit = 3;
+	float r;
 	Transform* tr_;
 };

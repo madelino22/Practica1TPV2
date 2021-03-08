@@ -185,5 +185,11 @@
     <ClInclude Include="FighterCtrl.h">
       <Filter>Header Files\components</Filter>
     </ClInclude>
+    <ClInclude Include="components\DeAcceleration.h">
+      <Filter>Header Files\components</Filter>
+    </ClInclude>
+    <ClInclude Include="components\ShowAtOppositeSide.h">
+      <Filter>Header Files\components</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

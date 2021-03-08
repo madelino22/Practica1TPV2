@@ -9,6 +9,8 @@
 #include "../components/Transform.h"
 #include "../components/Rotate.h"
 #include "../components/FighterCtrl.h"
+#include "../components/DeAcceleration.h"
+#include "../components/ShowAtOppositeSide.h"
 #include "../ecs/ecs.h"
 #include "../ecs/Entity.h"
 #include "../sdlutils/InputHandler.h"
@@ -35,7 +37,8 @@ void Game::init() {
 			Vector2D(), 50.0f, 50.0f, 0.0f);
 	jet->addComponent<Image>(&sdlutils().images().at("nave"));
 	jet->addComponent<FighterCtrl>();
-	jet->addComponent<Bounce>();
+	jet->addComponent<DeAcceleration>();
+	jet->addComponent<ShowAtOppositeSide>();
 
 
 }

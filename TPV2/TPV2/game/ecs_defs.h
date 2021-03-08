@@ -10,7 +10,8 @@ class Bounce;
 class Image;
 class Rotate;
 class FighterCtrl;
-
+class DeAcceleration;
+class ShowAtOppositeSide;
 #define _CMPS_LIST_  \
 	Transform,\
 	Rectangle,\
@@ -18,7 +19,9 @@ class FighterCtrl;
 	Bounce,\
 	Image,\
 	FighterCtrl,\
-	Rotate
+	Rotate, \
+	DeAcceleration, \
+	ShowAtOppositeSide
 
 
 
