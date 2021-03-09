@@ -12,8 +12,12 @@
 class Follow : public Component {
 public:
 	Follow():
+		nave(nullptr),
 		tr_(nullptr) {
-		jet = entity_->getMngr()->getHandler<JET>();
+	}
+	Follow(Entity* nave_) :
+		nave(nave_),
+		tr_(nullptr) {
 	}
 	virtual ~Follow() {
 	}
@@ -27,13 +31,13 @@ public:
 
 	void update() override {
 
-		auto& q = jet->addComponent<Transform>()->getPos();
+		auto& q = nave->getComponent<Transform>()->getPos();
 		auto& p = tr_->getPos();
 		auto& v = tr_->getVel();
-		v.rotate(v.angle(q - p) > 0 ? 1.0f : -1.0f);
+		v = v.rotate(v.angle(q - p) > 0 ? 1.0f : -1.0f);
 	}
 
 private:
-	Entity* jet;
+	Entity* nave;
 	Transform* tr_;
 };

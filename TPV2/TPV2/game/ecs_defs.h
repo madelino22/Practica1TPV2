@@ -13,6 +13,8 @@ class FighterCtrl;
 class DeAcceleration;
 class ShowAtOppositeSide;
 class Follow;
+class DisableOnExit;
+class Gun;
 #define _CMPS_LIST_  \
 	Transform,\
 	Rectangle,\
@@ -23,7 +25,9 @@ class Follow;
 	Rotate, \
 	DeAcceleration, \
 	ShowAtOppositeSide,\
-	Follow
+	Follow, \
+	DisableOnExit, \
+	Gun
 
 
 

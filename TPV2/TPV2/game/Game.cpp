@@ -13,6 +13,8 @@
 #include "../components/DeAcceleration.h"
 #include "../components/ShowAtOppositeSide.h"
 #include "../components/Follow.h"
+#include "../components/DisableOnExit.h"
+#include "../components/Gun.h"
 #include "../ecs/ecs.h"
 #include "../ecs/Entity.h"
 #include "../sdlutils/InputHandler.h"
@@ -23,7 +25,7 @@
 
 
 using Point2D = Vector2D;
-struct JET;
+//struct JET;
 
 Game::Game() {
 	mngr_.reset(new Manager());
@@ -33,7 +35,7 @@ Game::~Game() {
 }
 
 
-void Game::generaAsteroide() {
+void Game::generaAsteroide(Entity* jet) {
 	auto* asteroide = mngr_->addEntity();
 
 	int posIniR = sdlutils().rand().nextInt(0, 4);		
@@ -75,7 +77,7 @@ void Game::generaAsteroide() {
 	int gold = sdlutils().rand().nextInt(1, 10);
 	if (gold >= 7) {
 		asteroide->addComponent<Image>(&sdlutils().images().at("asteroideOro"));
-		asteroide->addComponent<Follow>();
+		asteroide->addComponent<Follow>(jet);
 	}
 	else {
 		asteroide->addComponent<Image>(&sdlutils().images().at("asteroide"));
@@ -90,6 +92,8 @@ void Game::init() {
 			"resources/config/resources.json");
 
 	auto *jet = mngr_->addEntity();
+	
+	
 	jet->addComponent<Transform>(
 			Vector2D(sdlutils().width() / 2.0f, sdlutils().height() / 2.0f),
 			Vector2D(), 50.0f, 50.0f, 0.0f);
@@ -97,12 +101,13 @@ void Game::init() {
 	jet->addComponent<FighterCtrl>();
 	jet->addComponent<DeAcceleration>();
 	jet->addComponent<ShowAtOppositeSide>();
+	jet->addComponent<Gun>();
 
-	mngr_->setHandler<JET>(jet);
+	//mngr_->setHandler<JET>(jet);
 
 	//asteoride
 	for (int x = 0; x < 10; x++) {
-		generaAsteroide();
+		generaAsteroide(jet);
 	}
 	
 

@@ -8,7 +8,7 @@
 // when you are not using the methods of a class, just
 // say that it exists, that saves time when parsing files
 class Manager;
-
+class Entity;
 class Game {
 public:
 	Game();
@@ -18,7 +18,7 @@ public:
 private:
 
 	//este método hay que quitarle
-	void generaAsteroide();
+	void generaAsteroide(Entity* jet);
 	std::unique_ptr<Manager> mngr_;
 };
 

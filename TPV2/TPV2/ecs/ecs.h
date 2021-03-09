@@ -34,7 +34,7 @@ struct ___DummyGroup____;
 #ifndef  _HDLRS_LIST_
 struct ___DummyHandler____;
 struct JET;
-#define _HDLRS_LIST_ ___DummyHandler____
+#define _HDLRS_LIST_ ___DummyHandler____ JET
 #endif
 
 

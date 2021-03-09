@@ -30,6 +30,7 @@ public:
 
 
 			if (ih().isKeyDown(SDL_SCANCODE_UP)) {
+				
 				Vector2D newVel;
 				r = tr_->getRot();
 				auto& vel = tr_->getVel();
