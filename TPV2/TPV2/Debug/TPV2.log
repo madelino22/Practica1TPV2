@@ -1,5 +1,5 @@
 ﻿  Game.cpp
-C:\Users\roy_x\OneDrive\Escritorio\GitHub\Practica1TPV2\TPV2\TPV2\components\FighterCtrl.h(56,15): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\roy_x\OneDrive\Escritorio\GitHub\Practica1TPV2\TPV2\TPV2\components\FighterCtrl.h(57,15): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
 C:\Users\roy_x\OneDrive\Escritorio\GitHub\Practica1TPV2\TPV2\TPV2\components\Gun.h(32,36): warning C4244: '=': conversión de 'Uint32' a 'float'; posible pérdida de datos
 C:\Users\roy_x\OneDrive\Escritorio\GitHub\Practica1TPV2\TPV2\TPV2\game\Game.cpp(45,49): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
 C:\Users\roy_x\OneDrive\Escritorio\GitHub\Practica1TPV2\TPV2\TPV2\game\Game.cpp(48,66): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
