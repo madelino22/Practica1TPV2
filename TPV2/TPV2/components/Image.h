@@ -9,10 +9,32 @@
 
 class Image: public Component {
 public:
-	Image(Texture *tex) :
-			tr_(nullptr), //
-			tex_(tex) //
+
+	Image(Texture* tex) :
+		tr_(nullptr), //
+		tex_(tex), src_({0,0, tex_->width(), tex_->height()}) //
+
 	{
+
+	}
+
+
+
+	Image(Texture *tex, SDL_Rect src) :
+			tr_(nullptr), //
+			tex_(tex), src_(src) //
+			
+	{
+
+	}
+
+	Image(Texture* tex, int rows, int cols, int r, int c) :
+		tr_(nullptr), //
+		tex_(tex) //
+	{
+		auto w = tex_->width() / cols;
+		auto h = tex_->height() / rows;
+		src_ = { w * c, h * r, w, h };
 	}
 	virtual ~Image() {
 	}
@@ -24,11 +46,12 @@ public:
 
 	void render() override {
 		SDL_Rect dest = build_sdlrect(tr_->getPos(), tr_->getW(), tr_->getH());
-		tex_->render(dest, tr_->getRot());
+		tex_->render(src_, dest, tr_->getRot());
 	}
 
 private:
 	Transform *tr_;
 	Texture *tex_;
+	SDL_Rect src_;
 };
 

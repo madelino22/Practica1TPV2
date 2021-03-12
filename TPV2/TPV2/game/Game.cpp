@@ -72,15 +72,15 @@ void Game::generaAsteroide(Entity* jet) {
 
 	asteroide->addComponent<Transform>(
 		posIni,
-		velIni, 50.0f, 50.0f, 0.0f);
+		velIni, 25.0f, 25.0f, 0.0f);
 
 	int gold = sdlutils().rand().nextInt(1, 10);
 	if (gold >= 7) {
-		asteroide->addComponent<Image>(&sdlutils().images().at("asteroideOro"));
+		asteroide->addComponent<Image>(&sdlutils().images().at("asteroideOro"), 5, 6, 0, 0);
 		asteroide->addComponent<Follow>(jet);
 	}
 	else {
-		asteroide->addComponent<Image>(&sdlutils().images().at("asteroide"));
+		asteroide->addComponent<Image>(&sdlutils().images().at("asteroide"), 5, 6, 0, 0);
 
 	}
 	asteroide->addComponent<ShowAtOppositeSide>();
@@ -97,6 +97,7 @@ void Game::init() {
 	jet->addComponent<Transform>(
 			Vector2D(sdlutils().width() / 2.0f, sdlutils().height() / 2.0f),
 			Vector2D(), 50.0f, 50.0f, 0.0f);
+	
 	jet->addComponent<Image>(&sdlutils().images().at("nave"));
 	jet->addComponent<FighterCtrl>();
 	jet->addComponent<DeAcceleration>();

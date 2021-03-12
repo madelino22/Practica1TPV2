@@ -40,6 +40,8 @@ public:
 				(vel).setX(newVel.getX());
 				(vel).setY(newVel.getY());
 
+				sdlutils().soundEffects().at("thrust").play();
+
 			}
 			
 
