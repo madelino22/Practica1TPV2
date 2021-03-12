@@ -36,6 +36,13 @@ class Gun;
 struct Group_1;
 #define _GRPS_LIST_  Group_1
 
+
+struct Bullets;
+#define _GRPS_LIST_  Bullets
+
 // handlers
 struct Hdlr_1;
 #define _HDLRS_LIST_ Hdlr_1
+
+struct Jet;
+#define _HDLRS_LIST_ Jet

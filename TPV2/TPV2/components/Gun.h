@@ -44,6 +44,8 @@ public:
 					bVel, 5.0f, 20.0f, r);
 				balaTest->addComponent<Image>(&sdlutils().images().at("asteroide"));
 				balaTest->addComponent<DisableOnExit>();
+
+				balaTest->setGroup<Bullets>(true);
 				sdlutils().soundEffects().at("fire").play();
 
 			}

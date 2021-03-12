@@ -77,7 +77,7 @@ void Game::generaAsteroide(Entity* jet) {
 	int gold = sdlutils().rand().nextInt(1, 10);
 	if (gold >= 7) {
 		asteroide->addComponent<Image>(&sdlutils().images().at("asteroideOro"), 5, 6, 0, 0);
-		asteroide->addComponent<Follow>(jet);
+		asteroide->addComponent<Follow>();
 	}
 	else {
 		asteroide->addComponent<Image>(&sdlutils().images().at("asteroide"), 5, 6, 0, 0);
@@ -104,7 +104,8 @@ void Game::init() {
 	jet->addComponent<ShowAtOppositeSide>();
 	jet->addComponent<Gun>();
 
-	//mngr_->setHandler<JET>(jet);
+	
+	mngr_->setHandler<Jet>(jet);
 
 	//asteoride
 	for (int x = 0; x < 10; x++) {

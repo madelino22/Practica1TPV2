@@ -1,4 +1,8 @@
 ﻿  Game.cpp
+C:\Users\manue\Desktop\Uni\2ºAño\2ºCuatri\TPV2\Practica1\Practica1TPV2\TPV2\TPV2\game\ecs_defs.h(41,1): warning C4005: '_GRPS_LIST_': redefinición de macro
+C:\Users\manue\Desktop\Uni\2ºAño\2ºCuatri\TPV2\Practica1\Practica1TPV2\TPV2\TPV2\game\ecs_defs.h(37): message : vea la definición anterior de '_GRPS_LIST_'
+C:\Users\manue\Desktop\Uni\2ºAño\2ºCuatri\TPV2\Practica1\Practica1TPV2\TPV2\TPV2\game\ecs_defs.h(48,1): warning C4005: '_HDLRS_LIST_': redefinición de macro
+C:\Users\manue\Desktop\Uni\2ºAño\2ºCuatri\TPV2\Practica1\Practica1TPV2\TPV2\TPV2\game\ecs_defs.h(45): message : vea la definición anterior de '_HDLRS_LIST_'
 C:\Users\manue\Desktop\Uni\2ºAño\2ºCuatri\TPV2\Practica1\Practica1TPV2\TPV2\TPV2\components\FighterCtrl.h(59,15): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
 C:\Users\manue\Desktop\Uni\2ºAño\2ºCuatri\TPV2\Practica1\Practica1TPV2\TPV2\TPV2\components\Gun.h(32,36): warning C4244: '=': conversión de 'Uint32' a 'float'; posible pérdida de datos
 C:\Users\manue\Desktop\Uni\2ºAño\2ºCuatri\TPV2\Practica1\Practica1TPV2\TPV2\TPV2\game\Game.cpp(45,49): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos

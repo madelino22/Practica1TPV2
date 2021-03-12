@@ -8,12 +8,16 @@
 #include "../sdlutils/InputHandler.h"
 #include "../ecs/Entity.h"
 #include "Transform.h"
+#include "../ecs/Manager.h"
+
 
 class Follow : public Component {
 public:
 	Follow():
 		nave(nullptr),
 		tr_(nullptr) {
+
+		
 	}
 	Follow(Entity* nave_) :
 		nave(nave_),
@@ -30,6 +34,7 @@ public:
 	}
 
 	void update() override {
+		if(nave == nullptr) nave = entity_->getMngr()->getHandler<Jet>();
 
 		auto& q = nave->getComponent<Transform>()->getPos();
 		auto& p = tr_->getPos();
