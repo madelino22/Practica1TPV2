@@ -15,6 +15,9 @@
 #include "../components/Follow.h"
 #include "../components/DisableOnExit.h"
 #include "../components/Gun.h"
+#include "../components/Health.h"
+#include "../components/Generations.h"
+#include "../components/FramedImage.h"
 #include "../ecs/ecs.h"
 #include "../ecs/Entity.h"
 #include "../sdlutils/InputHandler.h"
@@ -76,12 +79,14 @@ void Game::generaAsteroide(Entity* jet) {
 
 	int gold = sdlutils().rand().nextInt(1, 10);
 	if (gold >= 7) {
-		asteroide->addComponent<Image>(&sdlutils().images().at("asteroideOro"), 5, 6, 0, 0);
+		asteroide->addComponent<FramedImage>(&sdlutils().images().at("asteroideOro"), 5, 6, 0, 0);
 		asteroide->addComponent<Follow>();
+		asteroide->addComponent<Generations>();
+		
 	}
 	else {
-		asteroide->addComponent<Image>(&sdlutils().images().at("asteroide"), 5, 6, 0, 0);
-
+		asteroide->addComponent<FramedImage>(&sdlutils().images().at("asteroide"), 5, 6, 0, 0);
+		asteroide->addComponent<Generations>();
 	}
 	asteroide->addComponent<ShowAtOppositeSide>();
 
@@ -103,7 +108,9 @@ void Game::init() {
 	jet->addComponent<DeAcceleration>();
 	jet->addComponent<ShowAtOppositeSide>();
 	jet->addComponent<Gun>();
-
+	auto healthComponent = jet->addComponent<Health>();
+	/*healthComponent->loseLife();
+	healthComponent->resetLives();*/
 	
 	mngr_->setHandler<Jet>(jet);
 
