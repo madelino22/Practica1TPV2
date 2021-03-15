@@ -16,6 +16,9 @@
 #include "../components/DisableOnExit.h"
 #include "../components/Gun.h"
 #include "../components/Health.h"
+#include "../components/AsteroidsManager.h"
+#include "../components/State.h"
+#include "../components/GameCtrl.h"
 #include "../components/Generations.h"
 #include "../components/FramedImage.h"
 #include "../ecs/ecs.h"
@@ -38,63 +41,16 @@ Game::~Game() {
 }
 
 
-void Game::generaAsteroide(Entity* jet) {
-	auto* asteroide = mngr_->addEntity();
 
-	int posIniR = sdlutils().rand().nextInt(0, 4);		
-
-	Vector2D posIni;
-	if (posIniR == 0) {
-		posIni = Vector2D(0, sdlutils().rand().nextInt(0, sdlutils().height()));
-	}
-	else if (posIniR == 1) {
-		posIni = Vector2D(sdlutils().width(), sdlutils().rand().nextInt(0, sdlutils().height()));
-	}
-	else if (posIniR == 2) {
-		posIni = Vector2D(sdlutils().rand().nextInt(0, sdlutils().width()), 0);
-	}
-	else {
-		posIni = Vector2D(sdlutils().rand().nextInt(0, sdlutils().width()), sdlutils().height());
-
-	}
-
-
-	//cálculo de velIni
-	//point2d es un vector2d pero con el nombrecambiado para que sea más claro
-	Point2D r = Point2D(sdlutils().rand().nextInt(0, 100), sdlutils().rand().nextInt(0, 100));
-	//-50 para que quede centrado
-	Point2D c = Point2D(sdlutils().width() / 2 - 50, sdlutils().height() / 2 - 50);
-
-	c = c + r;
-
-	Vector2D velIni = Vector2D((c - posIni).normalize() * (sdlutils().rand().nextInt(1, 10) / 10.0)
-	);
-
-
-
-
-	asteroide->addComponent<Transform>(
-		posIni,
-		velIni, 25.0f, 25.0f, 0.0f);
-
-	int gold = sdlutils().rand().nextInt(1, 10);
-	if (gold >= 7) {
-		asteroide->addComponent<FramedImage>(&sdlutils().images().at("asteroideOro"), 5, 6, 0, 0);
-		asteroide->addComponent<Follow>();
-		asteroide->addComponent<Generations>();
-		
-	}
-	else {
-		asteroide->addComponent<FramedImage>(&sdlutils().images().at("asteroide"), 5, 6, 0, 0);
-		asteroide->addComponent<Generations>();
-	}
-	asteroide->addComponent<ShowAtOppositeSide>();
-
-}
 void Game::init() {
 
 	SDLUtils::init("Ping Pong", 800, 600,
 			"resources/config/resources.json");
+
+	Entity* GameManager = mngr_->addEntity();
+	GameManager->addComponent<State>();
+	GameManager->addComponent<GameCtrl>();
+	GameManager->addComponent<AsteroidsManager>();
 
 	auto *jet = mngr_->addEntity();
 	
@@ -104,20 +60,15 @@ void Game::init() {
 			Vector2D(), 50.0f, 50.0f, 0.0f);
 	
 	jet->addComponent<Image>(&sdlutils().images().at("nave"));
-	jet->addComponent<FighterCtrl>();
 	jet->addComponent<DeAcceleration>();
 	jet->addComponent<ShowAtOppositeSide>();
-	jet->addComponent<Gun>();
 	auto healthComponent = jet->addComponent<Health>();
 	/*healthComponent->loseLife();
 	healthComponent->resetLives();*/
 	
 	mngr_->setHandler<Jet>(jet);
 
-	//asteoride
-	for (int x = 0; x < 10; x++) {
-		generaAsteroide(jet);
-	}
+	
 	
 
 }

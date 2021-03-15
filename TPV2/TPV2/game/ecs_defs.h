@@ -18,6 +18,9 @@ class Gun;
 class Health;
 class Generations;
 class FramedImage;
+class State;
+class GameCtrl;
+class AsteroidsManager;
 #define _CMPS_LIST_  \
 	Transform,\
 	Rectangle,\
@@ -33,7 +36,11 @@ class FramedImage;
 	Gun, \
 	Health, \
 	Generations, \
-	FramedImage
+	FramedImage, \
+	State, \
+	GameCtrl, \
+	AsteroidsManager
+
 
 
 

@@ -18,7 +18,6 @@ public:
 private:
 
 	//este método hay que quitarle
-	void generaAsteroide(Entity* jet);
 	std::unique_ptr<Manager> mngr_;
 };
 
