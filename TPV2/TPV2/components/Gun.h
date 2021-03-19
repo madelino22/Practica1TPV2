@@ -42,7 +42,7 @@ public:
 				balaTest->addComponent<Transform>(
 					bPos,
 					bVel, 5.0f, 20.0f, r);
-				balaTest->addComponent<Image>(&sdlutils().images().at("asteroide"));
+				balaTest->addComponent<Image>(&sdlutils().images().at("fire"));
 				balaTest->addComponent<DisableOnExit>();
 				
 				balaTest->setGroup<Bullets>(true);

@@ -28,18 +28,19 @@ public:
                     {
                         if (state == State::GAMEOVER)
                         {
+                            entity_->getMngr()->getHandler<Jet>()->getComponent<Health>()->resetLives();
                             state = State::NEWGAME;
                         }
                         else
                         {
-                            Entity* jet = entity_->getMngr()->getHandler<Jet>();
-                            entity_->getComponent<State>()->changeState(State::RUNNING);
+                            Entity* jet = entity_->getMngr()->getHandler<Jet>();                            
                             jet->addComponent<FighterCtrl>();
                             jet->addComponent<Gun>();
                             //asteoride
                             for (int x = 0; x < 10; x++) {
                                 entity_->getComponent<AsteroidsManager>()->generaAsteroide();
                             }
+                            state = State::RUNNING;
                         }
                     }
             }

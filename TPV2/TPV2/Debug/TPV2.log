@@ -1,21 +1,22 @@
-﻿  Entity.cpp
-  Manager.cpp
-  Game.cpp
-C:\Users\manue\Desktop\Uni\2ºAño\2ºCuatri\TPV2\Practica1\Practica1TPV2\TPV2\TPV2\components\FighterCtrl.h(59,15): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
-C:\Users\manue\Desktop\Uni\2ºAño\2ºCuatri\TPV2\Practica1\Practica1TPV2\TPV2\TPV2\components\Gun.h(32,36): warning C4244: '=': conversión de 'Uint32' a 'float'; posible pérdida de datos
-C:\Users\manue\Desktop\Uni\2ºAño\2ºCuatri\TPV2\Practica1\Practica1TPV2\TPV2\TPV2\components\Health.h(44,34): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\manue\Desktop\Uni\2ºAño\2ºCuatri\TPV2\Practica1\Practica1TPV2\TPV2\TPV2\components\AsteroidsManager.h(35,50): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\manue\Desktop\Uni\2ºAño\2ºCuatri\TPV2\Practica1\Practica1TPV2\TPV2\TPV2\components\AsteroidsManager.h(38,67): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\manue\Desktop\Uni\2ºAño\2ºCuatri\TPV2\Practica1\Practica1TPV2\TPV2\TPV2\components\AsteroidsManager.h(38,38): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\manue\Desktop\Uni\2ºAño\2ºCuatri\TPV2\Practica1\Practica1TPV2\TPV2\TPV2\components\AsteroidsManager.h(41,47): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\manue\Desktop\Uni\2ºAño\2ºCuatri\TPV2\Practica1\Practica1TPV2\TPV2\TPV2\components\AsteroidsManager.h(44,89): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\manue\Desktop\Uni\2ºAño\2ºCuatri\TPV2\Practica1\Practica1TPV2\TPV2\TPV2\components\AsteroidsManager.h(44,47): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\manue\Desktop\Uni\2ºAño\2ºCuatri\TPV2\Practica1\Practica1TPV2\TPV2\TPV2\components\AsteroidsManager.h(51,83): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\manue\Desktop\Uni\2ºAño\2ºCuatri\TPV2\Practica1\Practica1TPV2\TPV2\TPV2\components\AsteroidsManager.h(51,48): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\manue\Desktop\Uni\2ºAño\2ºCuatri\TPV2\Practica1\Practica1TPV2\TPV2\TPV2\components\AsteroidsManager.h(53,76): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\manue\Desktop\Uni\2ºAño\2ºCuatri\TPV2\Practica1\Practica1TPV2\TPV2\TPV2\components\AsteroidsManager.h(53,46): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\manue\Desktop\Uni\2ºAño\2ºCuatri\TPV2\Practica1\Practica1TPV2\TPV2\TPV2\components\AsteroidsManager.h(57,91): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\manue\Desktop\Uni\2ºAño\2ºCuatri\TPV2\Practica1\Practica1TPV2\TPV2\TPV2\components\FramedImage.h(62,35): warning C4244: '=': conversión de 'Uint32' a 'float'; posible pérdida de datos
-  main.cpp
-  Generando código...
-  TPV2.vcxproj -> C:\Users\manue\Desktop\Uni\2ºAño\2ºCuatri\TPV2\Practica1\Practica1TPV2\TPV2\bin\TPV2Debug.exe
+﻿  Game.cpp
+C:\Users\roy_x\OneDrive\Escritorio\GitHub\Practica1TPV2\TPV2\TPV2\components\FighterCtrl.h(59,15): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\roy_x\OneDrive\Escritorio\GitHub\Practica1TPV2\TPV2\TPV2\components\Gun.h(32,36): warning C4244: '=': conversión de 'Uint32' a 'float'; posible pérdida de datos
+C:\Users\roy_x\OneDrive\Escritorio\GitHub\Practica1TPV2\TPV2\TPV2\components\Health.h(49,34): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\roy_x\OneDrive\Escritorio\GitHub\Practica1TPV2\TPV2\TPV2\components\AsteroidsManager.h(27,36): warning C4244: '=': conversión de 'Uint32' a 'float'; posible pérdida de datos
+C:\Users\roy_x\OneDrive\Escritorio\GitHub\Practica1TPV2\TPV2\TPV2\components\AsteroidsManager.h(55,50): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\roy_x\OneDrive\Escritorio\GitHub\Practica1TPV2\TPV2\TPV2\components\AsteroidsManager.h(58,67): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\roy_x\OneDrive\Escritorio\GitHub\Practica1TPV2\TPV2\TPV2\components\AsteroidsManager.h(58,38): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\roy_x\OneDrive\Escritorio\GitHub\Practica1TPV2\TPV2\TPV2\components\AsteroidsManager.h(61,47): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\roy_x\OneDrive\Escritorio\GitHub\Practica1TPV2\TPV2\TPV2\components\AsteroidsManager.h(64,89): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\roy_x\OneDrive\Escritorio\GitHub\Practica1TPV2\TPV2\TPV2\components\AsteroidsManager.h(64,47): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\roy_x\OneDrive\Escritorio\GitHub\Practica1TPV2\TPV2\TPV2\components\AsteroidsManager.h(71,83): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\roy_x\OneDrive\Escritorio\GitHub\Practica1TPV2\TPV2\TPV2\components\AsteroidsManager.h(71,48): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\roy_x\OneDrive\Escritorio\GitHub\Practica1TPV2\TPV2\TPV2\components\AsteroidsManager.h(73,76): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\roy_x\OneDrive\Escritorio\GitHub\Practica1TPV2\TPV2\TPV2\components\AsteroidsManager.h(73,46): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\roy_x\OneDrive\Escritorio\GitHub\Practica1TPV2\TPV2\TPV2\components\AsteroidsManager.h(77,91): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\roy_x\OneDrive\Escritorio\GitHub\Practica1TPV2\TPV2\TPV2\components\AsteroidsManager.h(103,8): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\roy_x\OneDrive\Escritorio\GitHub\Practica1TPV2\TPV2\TPV2\components\AsteroidsManager.h(106,51): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\roy_x\OneDrive\Escritorio\GitHub\Practica1TPV2\TPV2\TPV2\components\AsteroidsManager.h(106,60): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\roy_x\OneDrive\Escritorio\GitHub\Practica1TPV2\TPV2\TPV2\components\AsteroidsManager.h(106,72): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\roy_x\OneDrive\Escritorio\GitHub\Practica1TPV2\TPV2\TPV2\components\FramedImage.h(62,35): warning C4244: '=': conversión de 'Uint32' a 'float'; posible pérdida de datos
+  TPV2.vcxproj -> C:\Users\roy_x\OneDrive\Escritorio\GitHub\Practica1TPV2\TPV2\bin\TPV2Debug.exe

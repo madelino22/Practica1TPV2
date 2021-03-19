@@ -36,30 +36,38 @@ public:
 		return height_;
 	}
 
-	void setH(float height) {
-		height_ = height;
+	float getRot() const {
+		return rotation_;
 	}
 
 	float getW() const {
 		return width_;
 	}
 
-	void setW(float width) {
-		width_ = width;
+	void setH(float height) {
+		height_ = height;
 	}
 
-	float getRot() const {
-		return rotation_;
+	void setW(float width) {
+		width_ = width;
 	}
 
 	void setRot(float rot) {
 		rotation_ = rot;
 	}
 
+	void setVel(Vector2D vel) {
+		vel_ = vel;
+	}
+	
+	void setPos(Vector2D pos)
+	{
+		pos_ = pos;
+	}
+
 	void update() override {
 		pos_ = pos_ + vel_;
 	}
-
 private:
 	Vector2D pos_;
 	Vector2D vel_;

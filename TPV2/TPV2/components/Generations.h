@@ -14,6 +14,9 @@ public:
 	Generations() :
 		generations(sdlutils().rand().nextInt(1, 3))
 	{}
+	Generations(int g) :
+		generations(g)
+	{}
 
 	virtual ~Generations() {
 	}

@@ -12,7 +12,7 @@ class Health : public Component {
 public:
 
 	Health() :
-		tr_(nullptr), tex_(&sdlutils().images().at("star")), //
+		tr_(nullptr), tex_(&sdlutils().images().at("heart")), //
 		lives(3),src_({ 0,0, tex_->width(), tex_->height() }) //
 	{}
 
@@ -26,6 +26,11 @@ public:
 	void loseLife()
 	{
 		lives = --lives;
+		tr_->setRot(0.0f);
+		tr_->setVel(Vector2D(0,0));
+		tr_->setPos(Vector2D(sdlutils().width() / 2.0f, sdlutils().height() / 2.0f));
+		entity_->removeComponent<FighterCtrl>();
+		entity_->removeComponent<Gun>();
 	}
 	void resetLives()
 	{

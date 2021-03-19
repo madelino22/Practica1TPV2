@@ -21,6 +21,7 @@ class FramedImage;
 class State;
 class GameCtrl;
 class AsteroidsManager;
+class CollisionsManager;
 #define _CMPS_LIST_  \
 	Transform,\
 	Rectangle,\
@@ -39,7 +40,8 @@ class AsteroidsManager;
 	FramedImage, \
 	State, \
 	GameCtrl, \
-	AsteroidsManager
+	AsteroidsManager, \
+	CollisionsManager
 
 
 
@@ -48,7 +50,8 @@ class AsteroidsManager;
 
 struct Group_1;
 struct Bullets;
-#define _GRPS_LIST_  Group_1, Bullets
+struct Asteroids;
+#define _GRPS_LIST_  Group_1, Bullets, Asteroids
 
 // handlers
 struct Hdlr_1;

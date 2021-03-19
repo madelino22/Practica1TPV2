@@ -218,5 +218,8 @@
     <ClInclude Include="components\AsteroidsManager.h">
       <Filter>Header Files\components</Filter>
     </ClInclude>
+    <ClInclude Include="components\CollisionsManager.h">
+      <Filter>Header Files\components</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

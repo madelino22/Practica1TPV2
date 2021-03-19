@@ -21,6 +21,7 @@
 #include "../components/GameCtrl.h"
 #include "../components/Generations.h"
 #include "../components/FramedImage.h"
+#include "../components/CollisionsManager.h"
 #include "../ecs/ecs.h"
 #include "../ecs/Entity.h"
 #include "../sdlutils/InputHandler.h"
@@ -50,8 +51,8 @@ void Game::init() {
 	Entity* GameManager = mngr_->addEntity();
 	GameManager->addComponent<State>();
 	GameManager->addComponent<GameCtrl>();
+	GameManager->addComponent<CollisionsManager>();
 	GameManager->addComponent<AsteroidsManager>();
-
 	auto *jet = mngr_->addEntity();
 	
 	
@@ -67,10 +68,7 @@ void Game::init() {
 	healthComponent->resetLives();*/
 	
 	mngr_->setHandler<Jet>(jet);
-
-	
-	
-
+	GameManager->getComponent<CollisionsManager>()->refreshJet();
 }
 
 void Game::start() {
