@@ -43,6 +43,16 @@ public:
 						{
 							entity_->getComponent<AsteroidsManager>()->onCollision(ents[i]);
 							ents[j]->setActive(false);
+							if (entity_->getComponent<AsteroidsManager>()->getNumAsteroides() == 0)
+							{
+								entity_->getComponent<State>()->changeState(State::GAMEOVER);
+								auto tr_ = jet->getComponent<Transform>();
+								tr_->setRot(0.0f);
+								tr_->setVel(Vector2D(0, 0));
+								tr_->setPos(Vector2D(sdlutils().width() / 2.0f, sdlutils().height() / 2.0f));
+								jet->removeComponent<FighterCtrl>();
+								jet->removeComponent<Gun>();
+							}
 						}
 					}
 					else if (ents[j]->hasComponent<FighterCtrl>())
@@ -54,7 +64,12 @@ public:
 							Catapum();
 							auto jetHealth = jet->getComponent<Health>();
 							jetHealth->loseLife();
-							
+							auto tr_ = jet->getComponent<Transform>();
+							tr_->setRot(0.0f);
+							tr_->setVel(Vector2D(0, 0));
+							tr_->setPos(Vector2D(sdlutils().width() / 2.0f, sdlutils().height() / 2.0f));
+							jet->removeComponent<FighterCtrl>();
+							jet->removeComponent<Gun>();
 							if (jetHealth->getLives() > 0)
 								entity_->getComponent<State>()->changeState(State::PAUSED);
 							else entity_->getComponent<State>()->changeState(State::GAMEOVER);

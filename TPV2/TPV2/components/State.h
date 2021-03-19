@@ -17,7 +17,7 @@ public:
 	enum States { NEWGAME, PAUSED, RUNNING, GAMEOVER };
 
 	State() {
-		state = NEWGAME;
+		state = States::NEWGAME;
 	}
 	virtual ~State() {
 	}
@@ -30,15 +30,15 @@ public:
 
 
 	void update() override {
-		if (state == NEWGAME) {
+		/*if (state == NEWGAME) {
 
 		}
 		else if (state == PAUSED) {
 			
 		}
-		else if (state = GAMEOVER) {
+		else if (state == GAMEOVER) {
 
-		}
+		}*/
 	}
 
 private:

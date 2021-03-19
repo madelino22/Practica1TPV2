@@ -22,14 +22,14 @@ public:
         if (ih().keyDownEvent()) {
              if (ih().isKeyDown(SDL_SCANCODE_SPACE)) {
 
-                State::States state = entity_->getComponent<State>()->getState();
+                State* state = entity_->getComponent<State>();
                 
-                    if (state != State::RUNNING)
+                    if (state->getState() != State::RUNNING)
                     {
-                        if (state == State::GAMEOVER)
+                        if (state->getState() == State::GAMEOVER)
                         {
                             entity_->getMngr()->getHandler<Jet>()->getComponent<Health>()->resetLives();
-                            state = State::NEWGAME;
+                            state->changeState(State::PAUSED);
                         }
                         else
                         {
@@ -40,7 +40,7 @@ public:
                             for (int x = 0; x < 10; x++) {
                                 entity_->getComponent<AsteroidsManager>()->generaAsteroide();
                             }
-                            state = State::RUNNING;
+                            state->changeState(State::RUNNING);
                         }
                     }
             }

@@ -64,9 +64,6 @@ void Game::init() {
 	jet->addComponent<DeAcceleration>();
 	jet->addComponent<ShowAtOppositeSide>();
 	auto healthComponent = jet->addComponent<Health>();
-	/*healthComponent->loseLife();
-	healthComponent->resetLives();*/
-	
 	mngr_->setHandler<Jet>(jet);
 	GameManager->getComponent<CollisionsManager>()->refreshJet();
 }
