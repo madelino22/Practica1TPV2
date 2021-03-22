@@ -37,7 +37,15 @@
   
   "messages" : [
     { "id" : "PressAnyKey", "text" : "Press Any Key", "font" : "ARIAL24", "color" : "0x112233ff", "bg" : "0xffffffff" },
-    { "id" : "HelloSDL", "text" : "Hello SDL!", "font" : "ARIAL48", "color" : "0x0000ffff" }
+    { "id" : "HelloSDL", "text" : "Hello SDL!", "font" : "ARIAL48", "color" : "0x0000ffff" },
+    { "id" : "PAUSED", "text" : "Press space to continue!", "font" : "ARIAL48", "color" : "0x0000ffff" },
+    { "id" : "NEWGAME", "text" : "Press space to start!", "font" : "ARIAL48", "color" : "0x0000ffff" },
+    { "id" : "GAMEOVER", "text" : "Game Over: Loser :(", "font" : "ARIAL48", "color" : "0x0000ffff" },
+    { "id" : "WINNER", "text" : "You won :)!", "font" : "ARIAL48", "color" : "0x0000ffff" }
+
+
+
+
   ],
 
   "sounds": [

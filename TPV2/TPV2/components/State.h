@@ -14,10 +14,16 @@
 class State : public Component {
 
 public:
-	enum States { NEWGAME, PAUSED, RUNNING, GAMEOVER };
+	enum States { NEWGAME, PAUSED, RUNNING, GAMEOVER};
 
 	State() {
 		state = States::NEWGAME;
+		NEWGAMEText = &sdlutils().msgs().at("NEWGAME");
+		PAUSEDText = &sdlutils().msgs().at("PAUSED");
+		WINNERText = &sdlutils().msgs().at("WINNER");
+		GAMEOVERText = &sdlutils().msgs().at("GAMEOVER");
+		
+		
 	}
 	virtual ~State() {
 	}
@@ -28,19 +34,32 @@ public:
 
 	States getState() const { return state;}
 
-
-	void update() override {
-		/*if (state == NEWGAME) {
+		
+	virtual void render() {
+		if (state == NEWGAME) {
+			NEWGAMEText->render(200, 200);
 
 		}
 		else if (state == PAUSED) {
-			
+			PAUSEDText->render(200, 200);
+
 		}
 		else if (state == GAMEOVER) {
+			GAMEOVERText->render(200, 200);
 
-		}*/
+		}
+
+	}
+	void update() override {
+		
+		
 	}
 
 private:
 	States state;
+
+	Texture* NEWGAMEText;
+	Texture* PAUSEDText;
+	Texture* WINNERText;
+	Texture* GAMEOVERText;
 };
