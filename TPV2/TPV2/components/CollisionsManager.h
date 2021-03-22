@@ -35,7 +35,7 @@ public:
 			{
 				auto aTR = ents[i]->getComponent<Transform>();
 				for (int j = 0; j < n; ++j)
-					if (ents[j]->hasGroup<Bullets>())
+					if (ents[j]->hasGroup<Bullets>()) // Choque con las balas
 					{
 						auto bTR = ents[j]->getComponent<Transform>();
 						if (Collisions::collidesWithRotation(aTR->getPos(), aTR->getW(), aTR->getH(), aTR->getRot(),
@@ -45,7 +45,7 @@ public:
 							ents[j]->setActive(false);
 							if (entity_->getComponent<AsteroidsManager>()->getNumAsteroides() == 0)
 							{
-								entity_->getComponent<State>()->changeState(State::GAMEOVER);
+								entity_->getComponent<State>()->changeState(State::WON);
 								auto tr_ = jet->getComponent<Transform>();
 								tr_->setRot(0.0f);
 								tr_->setVel(Vector2D(0, 0));
@@ -55,7 +55,7 @@ public:
 							}
 						}
 					}
-					else if (ents[j]->hasComponent<FighterCtrl>())
+					else if (ents[j]->hasComponent<FighterCtrl>()) // Choque con la nave
 					{
 						auto jTR = ents[j]->getComponent<Transform>();
 						if (Collisions::collidesWithRotation(aTR->getPos(), aTR->getW(), aTR->getH(), aTR->getRot(),
@@ -70,6 +70,7 @@ public:
 							tr_->setPos(Vector2D(sdlutils().width() / 2.0f, sdlutils().height() / 2.0f));
 							jet->removeComponent<FighterCtrl>();
 							jet->removeComponent<Gun>();
+							sdlutils().soundEffects().at("bangSmall").play();
 							if (jetHealth->getLives() > 0)
 								entity_->getComponent<State>()->changeState(State::PAUSED);
 							else entity_->getComponent<State>()->changeState(State::GAMEOVER);

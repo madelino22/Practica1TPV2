@@ -14,7 +14,7 @@
 class State : public Component {
 
 public:
-	enum States { NEWGAME, PAUSED, RUNNING, GAMEOVER};
+	enum States { NEWGAME, PAUSED, RUNNING, GAMEOVER, WON};
 
 	State() {
 		state = States::NEWGAME;
@@ -46,6 +46,10 @@ public:
 		}
 		else if (state == GAMEOVER) {
 			GAMEOVERText->render(200, 200);
+
+		}
+		else if (state == WON) {
+			WINNERText->render(200, 200);
 
 		}
 

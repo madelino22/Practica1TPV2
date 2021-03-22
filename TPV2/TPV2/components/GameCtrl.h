@@ -26,7 +26,7 @@ public:
                 
                     if (state->getState() != State::RUNNING)
                     {
-                        if (state->getState() == State::GAMEOVER)
+                        if (state->getState() == State::GAMEOVER || state->getState() == State::WON)
                         {
                             entity_->getMngr()->getHandler<Jet>()->getComponent<Health>()->resetLives();
                             state->changeState(State::PAUSED);
