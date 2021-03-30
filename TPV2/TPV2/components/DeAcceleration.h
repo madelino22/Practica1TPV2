@@ -13,11 +13,14 @@ public:
 	}
 	virtual ~DeAcceleration() {
 	}
+
+	//Al iniciar guarda el componente transform ya que lo necesita para desacelerar
 	void init() override {
 		tr_ = entity_->getComponent<Transform>();
 		assert(tr_ != nullptr);
 	}
 
+	//en cada iteración del bicle de juego disminuye la velocidad poco a poco, cambiando la velocidad del componente transform
 	void update() override {
 		auto& vel = tr_->getVel();
 		vel = vel * 0.995f;

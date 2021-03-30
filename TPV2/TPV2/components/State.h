@@ -17,7 +17,10 @@ public:
 	enum States { NEWGAME, PAUSED, RUNNING, GAMEOVER, WON};
 
 	State() {
+		// Al empezar la partida el estado inicial es NEWGAME
 		state = States::NEWGAME;
+
+		//genera todos los mensjaes para cuando sean usados
 		NEWGAMEText = &sdlutils().msgs().at("NEWGAME");
 		PAUSEDText = &sdlutils().msgs().at("PAUSED");
 		WINNERText = &sdlutils().msgs().at("WINNER");
@@ -27,7 +30,7 @@ public:
 	}
 	virtual ~State() {
 	}
-	
+	// Cambia el estado actual
 	void changeState(States newState) {
 		state = newState;
 	}
@@ -36,6 +39,7 @@ public:
 
 		
 	virtual void render() {
+		//en función del estado se muestra un mensaje uotro por pantalla
 		if (state == NEWGAME) {
 			NEWGAMEText->render(200, 200);
 
@@ -54,14 +58,12 @@ public:
 		}
 
 	}
-	void update() override {
-		
-		
-	}
+	
 
 private:
 	States state;
 
+	//los mensajes son texturas que usan el json y luego se pintan con render en la posición requerida
 	Texture* NEWGAMEText;
 	Texture* PAUSEDText;
 	Texture* WINNERText;

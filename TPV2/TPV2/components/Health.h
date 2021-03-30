@@ -35,12 +35,15 @@ public:
 	{
 		return lives;
 	}
+
 	void render() override {
+		//la posición del primer corazon es la anchura y altura de un caza, para qeu tenga margenes
 		Vector2D pos(tr_->getW(), tr_->getH());
 		SDL_Rect dest = build_sdlrect(pos, tr_->getW(), tr_->getH());
 		for (int i = 0; i < lives; ++i)
 		{
 			tex_->render(src_, dest, 0);
+			//Cada vez que pinta uno cambia la posición x del siguiente
 			dest.x = dest.x + tr_->getW() + 10;
 		}
 	}

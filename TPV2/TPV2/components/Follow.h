@@ -34,11 +34,15 @@ public:
 	}
 
 	void update() override {
+		//localiza mediante un handler la posición de l nave
 		if(nave == nullptr) nave = entity_->getMngr()->getHandler<Jet>();
 
 		auto& q = nave->getComponent<Transform>()->getPos();
 		auto& p = tr_->getPos();
 		auto& v = tr_->getVel();
+
+		//como la velocidad inicial ya ha sido establecida al crear la entidad solo
+		//hace falta rotar ese vector para que se aliniee con la nave
 		v = v.rotate(v.angle(q - p) > 0 ? 1.0f : -1.0f);
 	}
 

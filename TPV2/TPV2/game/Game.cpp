@@ -32,7 +32,6 @@
 
 
 using Point2D = Vector2D;
-//struct JET;
 
 Game::Game() {
 	mngr_.reset(new Manager());
@@ -45,17 +44,20 @@ Game::~Game() {
 
 void Game::init() {
 
-	SDLUtils::init("Ping Pong", 800, 600,
-			"resources/config/resources.json");
+	SDLUtils::init("Asteroids", 800, 600,
+			"resources/config/resources.json");//utilizamos el json resources
 
+	//se le añade la entidad gamemanager, con sus manager para cntrolar el estado de la partida
+	//y del juego
 	Entity* GameManager = mngr_->addEntity();
 	GameManager->addComponent<State>();
 	GameManager->addComponent<GameCtrl>();
 	GameManager->addComponent<CollisionsManager>();
 	GameManager->addComponent<AsteroidsManager>();
+
+
+	//se crea qel jet, que siempre va a estar en pantalla
 	auto *jet = mngr_->addEntity();
-	
-	
 	jet->addComponent<Transform>(
 			Vector2D(sdlutils().width() / 2.0f, sdlutils().height() / 2.0f),
 			Vector2D(), 50.0f, 50.0f, 0.0f);

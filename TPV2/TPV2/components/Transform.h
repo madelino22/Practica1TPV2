@@ -64,15 +64,15 @@ public:
 	{
 		pos_ = pos;
 	}
-
-	void update() override {
+	// Actualiza la posición sumándole la velocidad actual
+	void update() override { 
 		pos_ = pos_ + vel_;
 	}
 private:
-	Vector2D pos_;
-	Vector2D vel_;
-	float width_;
-	float height_;
-	float rotation_;
+	Vector2D pos_; // Posicion del objeto
+	Vector2D vel_; // Velocidad del objeto
+	float width_; // Ancho del objeto
+	float height_; // Alto del objeto
+	float rotation_; // Rotacion del objeto
 };
 

@@ -12,7 +12,7 @@ class Generations : public Component {
 public:
 
 	Generations() :
-		generations(sdlutils().rand().nextInt(1, 3))
+		generations(sdlutils().rand().nextInt(1, 3)) // Se calcula de forma aleatoria el número de divisiones, que puede ser 1, 2 o 3
 	{}
 	Generations(int g) :
 		generations(g)
@@ -27,6 +27,6 @@ public:
 	}
 
 private:
-	int generations;
+	int generations; // Numero de veces que se puede dividir un asteroide
 };
 

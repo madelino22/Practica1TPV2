@@ -28,24 +28,19 @@ public:
 
 	}
 
-	Image(Texture* tex, int rows, int cols, int r, int c) :
-		tr_(nullptr), //
-		tex_(tex) //
-	{
-		auto w = tex_->width() / cols;
-		auto h = tex_->height() / rows;
-		src_ = { w * c, h * r, w, h };
-	}
+	
+	
 	virtual ~Image() {
 	}
 
+	//Se necesita el transform para acceder a posición, ancho, alto y rotación del objeto que se va a dibujar
 	void init() override {
 		tr_ = entity_->getComponent<Transform>();
 		assert(tr_ != nullptr);
 	}
 
 	void render() override {
-		SDL_Rect dest = build_sdlrect(tr_->getPos(), tr_->getW(), tr_->getH());
+		SDL_Rect dest = build_sdlrect(tr_->getPos(), tr_->getW(), tr_->getH()); // Rectangulo destino donde se va a dibujar el objeto en pantalla
 		tex_->render(src_, dest, tr_->getRot());
 	}
 

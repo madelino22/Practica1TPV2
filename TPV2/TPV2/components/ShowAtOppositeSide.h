@@ -19,6 +19,8 @@ public:
 		assert(tr_ != nullptr);
 	}
 
+	//Se chequea si se ha salido por algún borde de la pantalla, si es así
+	//se modifica el transform de la entidad para salir en el margen opuesto
 	void update() override {
 		auto& pos = tr_->getPos();
 		auto& vel = tr_->getVel();

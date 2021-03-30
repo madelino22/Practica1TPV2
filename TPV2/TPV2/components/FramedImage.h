@@ -32,9 +32,10 @@ public:
 	FramedImage(Texture* tex, int rows, int cols, int r, int c) :
 		tr_(nullptr), //
 		tex_(tex) //
-	{
-		auto w = tex_->width() / cols;
-		auto h = tex_->height() / rows;
+	{	
+		
+		auto w = tex_->width() / cols; // Ancho de la imagen
+		auto h = tex_->height() / rows; // Alto de la imagen
 		src_ = { w * c, h * r, w, h };
 	}
 	virtual ~FramedImage() {
@@ -46,31 +47,31 @@ public:
 	}
 	void update()
 	{
-		if (sdlutils().currRealTime() >= timer + 50)
+		if (sdlutils().currRealTime() >= timer + 50) // Cada 50 ms debe cambiar el fragmento que cogemos de la textura
 		{
 			
-			src_.x = src_.x + src_.w;
-			if (src_.x >= tex_->width())
+			src_.x = src_.x + src_.w; // A la posición horizontal en la que estamos de la textura le sumamos el ancho de la imagen para que pasemos a la siguiente imagen del spritesheet
+			if (src_.x >= tex_->width()) // Si al hacerlo superamos el ancho del spritesheet, pasamos a la siguiente fila empezando por la izquierda
 			{
 				src_.x = 0;
 				src_.y = src_.y + src_.h;
 			}
-			if (src_.y >= tex_->height())
+			if (src_.y >= tex_->height()) // Si superamos el alto del spritesheet, volvemos a empezar desde el principio
 			{
 				src_.y = 0;
 			}
-			timer = sdlutils().currRealTime();
+			timer = sdlutils().currRealTime(); // Actualizamos el contador
 		}
 	}
 	void render() override {
-		SDL_Rect dest = build_sdlrect(tr_->getPos(), tr_->getW(), tr_->getH());
+		SDL_Rect dest = build_sdlrect(tr_->getPos(), tr_->getW(), tr_->getH()); // Rectángulo de destino donde se debe dibujar la imagen
 		tex_->render(src_, dest, tr_->getRot());
 	}
 
 private:
 	Transform* tr_;
 	Texture* tex_;
-	SDL_Rect src_;
-	float timer;
+	SDL_Rect src_; // Rectángulo cuyas dimensiones equivalen a la parte que queremos de la imagen
+	float timer; // Temporizador
 };
 
